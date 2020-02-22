@@ -1,0 +1,101 @@
+/*
+SQLyog Enterprise - MySQL GUI v6.56
+MySQL - 6.0.11-alpha-community : Database - indiacard
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`indiacard` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `indiacard`;
+
+/*Table structure for table `bank` */
+
+DROP TABLE IF EXISTS `bank`;
+
+CREATE TABLE `bank` (
+  `name` varchar(100) DEFAULT NULL,
+  `bid` varchar(100) DEFAULT NULL,
+  `pass` varchar(100) DEFAULT NULL,
+  `code` varchar(100) DEFAULT NULL,
+  `reqst` varchar(50) DEFAULT 'Send Request',
+  `id` int(100) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+
+/*Data for the table `bank` */
+
+insert  into `bank`(`name`,`bid`,`pass`,`code`,`reqst`,`id`) values ('iob','45','iob2','iobnlr','Send Request',1),('sbi','789','sbi','789','Send Request',5);
+
+/*Table structure for table `credit` */
+
+DROP TABLE IF EXISTS `credit`;
+
+CREATE TABLE `credit` (
+  `id` varchar(50) DEFAULT NULL,
+  `card` varchar(50) DEFAULT NULL,
+  `credit` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `credit` */
+
+insert  into `credit`(`id`,`card`,`credit`) values ('s2','s22','500'),('dd','d1','3000'),('456','1234567890','100000');
+
+/*Table structure for table `db` */
+
+DROP TABLE IF EXISTS `db`;
+
+CREATE TABLE `db` (
+  `id` varchar(50) DEFAULT NULL,
+  `card` varchar(50) DEFAULT NULL,
+  `debit` varchar(50) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `db` */
+
+insert  into `db`(`id`,`card`,`debit`) values ('s2','s22','4000'),('dd','d1','500'),('456','1234567890','50000');
+
+/*Table structure for table `icard` */
+
+DROP TABLE IF EXISTS `icard`;
+
+CREATE TABLE `icard` (
+  `id` varchar(100) DEFAULT NULL,
+  `card` varchar(100) DEFAULT NULL,
+  `pass` varchar(100) DEFAULT NULL,
+  `req` varchar(100) DEFAULT 'Not Accepted'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `icard` */
+
+insert  into `icard`(`id`,`card`,`pass`,`req`) values ('s2','s22','s22','Accepted'),('dd','d1','d1','Accepted'),('456','1234567890','harisuni','Accepted');
+
+/*Table structure for table `user` */
+
+DROP TABLE IF EXISTS `user`;
+
+CREATE TABLE `user` (
+  `bid` varchar(50) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `id` varchar(50) DEFAULT NULL,
+  `pass` varchar(50) DEFAULT NULL,
+  `num` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `occu` varchar(50) DEFAULT NULL,
+  `address` varchar(50) DEFAULT NULL,
+  `request` varchar(50) DEFAULT 'Not Accepted',
+  `time` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+/*Data for the table `user` */
+
+insert  into `user`(`bid`,`name`,`id`,`pass`,`num`,`email`,`occu`,`address`,`request`,`time`) values ('2','ss','ss2','ss2','7878787878','srisri@gmail.com','doctor','nellore','Accepted',NULL),('2','hh','hh','hh','hh','hh@gmail.com','hh','hh','Not Accepted',NULL),('2','g','123','g','9897969594','g@gmail.com','former','tpr','Not Accepted','2019-03-09 17:48:06'),('789','hari','456','hari','9897969594','hari@gmail.com','farmer','bnglr','Accepted','2019-03-10 10:02:26');
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

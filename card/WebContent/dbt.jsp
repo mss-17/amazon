@@ -1,0 +1,200 @@
+
+<%@page import="java.sql.*"%>
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Responsive Bootstrap HTML Template - Sports</title>
+	<meta name="description" content="A free responsive website template made exclusively for Frittt by Themesforce and Sarfraz Shaukat">
+	<meta name="keywords" content="website template, css3, one page, bootstrap, app template, web app, start-up">
+	<meta name="author" content="Themesforce and Sarfraz Shaukat for Frittt">
+	<link rel="icon" type="image/png" href="favicons/favicon-16x16.png" sizes="16x16">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="fonts/font-awesome-4.3.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/all.css">
+	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	
+	<title>Table V02</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util1.css">
+	<link rel="stylesheet" type="text/css" href="css/main1.css">
+<!--===============================================================================================-->
+</head>
+<head>
+
+<!--===============================================================================================-->	
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main1.js"></script>
+
+ </head>
+ <body  align="center">
+
+          <header id="header">
+			<div class="container">
+			<h1 align="center"><font color="Dark Blue"><b>One India Card</b></font></font></h1>
+				
+				<nav id="nav">
+					<div class="opener-holder">
+						<a href="#" class="nav-opener"><span></span></a>
+					</div>
+					<!-- <a href="javascript:" class="btn btn-primary rounded">Enroll Today</a> -->
+					<div class="nav-drop">
+						<ul>
+					<li><a href="viewureq.jsp"><h4 style="color:yellow">view user request</h4></a></li>
+					
+					<li><a href="vcard.jsp"><h4 style="color:yellow">view card request</h4></a></li>
+					
+					<li><a href="crt.jsp"><h4 style="color:yellow">credit transactions</h4></a></li>
+					<li><a href="dbt.jsp"><h4 style="color:yellow">debit transactions</h4></a></li>
+					<li><a href="index.html"><h4 style="color:yellow">logout</h4></a></li>
+						</ul>
+						<div class="drop-holder visible-sm visible-xs">
+							<span>Follow Us</span>
+							<ul class="social-networks">
+								<li><a class="fa fa-github" href="#"></a></li>
+								<li><a class="fa fa-twitter" href="#"></a></li>
+								<li><a class="fa fa-facebook" href="#"></a></li>
+							</ul>
+						</div>
+					</div>
+					
+			</div>			
+					
+					
+					
+
+<br><br><br>
+
+<center>
+				<div class="row header">
+							<div class="cell">
+								 User Id
+							</div>
+							<div class="cell">
+								Card Id
+							</div>
+							<div class="cell">
+								Debit Amount
+							</div>
+						</div>
+						
+					<%
+try{ 
+ Class.forName("com.mysql.jdbc.Driver");
+ Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/indiacard","root","root");
+ PreparedStatement ps=con.prepareStatement("select * FROM db");
+ 
+ ResultSet rs=ps.executeQuery();
+ while(rs.next()){
+	%>		
+						
+
+						<div class="row">
+							<div class="cell" data-title="Full Name">
+								<%=rs.getString("id") %>
+							</div>
+							<div class="cell" data-title="Age">
+								<%=rs.getString("card") %>
+							</div>
+							<div class="cell" data-title="Job Title">
+								<%=rs.getString("debit") %>
+							</div>
+							
+							
+						</div>
+   
+					<%
+ }}
+					  catch(Exception e)
+						{
+					  e.printStackTrace();
+					 }
+ 
+					%>	
+						
+						
+						
+				 </center>		
+						
+
+					</div>
+			</div>
+		</div>
+	</div>
+					 
+
+						
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+		
+					
+					
+					
+					
+					
+					
+					
+					
+				</nav>
+			</div>
+		</header>
+	<section class="visual">
+		<div class="container">
+			<div class="text-block">
+				<div class="heading-holder">
+					<!-- <h1><font color="black">One India Card</font></h1> -->
+				</div>
+				
+				
+		
+				
+			</div>
+		</div>
+		<img src="images/ec-cash-1750490_1280.jpg" alt="" class="bg-stretch">
+	</section>
+	<!-- <section class="main">
+		<div class="container">
+			<div id="cta">
+				<a href="javascript:" class="btn btn-primary rounded">Start Training Now</a>
+				<p>Every day is a challenge, change your life now.</p>
+			</div>
+			<div class="row">
+				<div class="text-box col-md-offset-1 col-md-10">
+					<h2>About the Club</h2>
+					<p>An athlete cannot run with money in his pockets. He must run with hope in his heart and dreams in his head.</p>
+				</div>
+			</div>
+		</div>
+	</section>  -->
+	
+</div>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/jquery.main.js"></script>
+</body>
+</html>
